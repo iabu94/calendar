@@ -4,16 +4,21 @@ import Day from "./Day";
 
 type Props = {
   months: Month[];
+  holidays: Holiday[];
 };
 
-export default function Month({ months }: Props) {
+export default function Month({ months, holidays }: Props) {
   const [monthId, setMonthId] = useState(new Date().getMonth());
 
   const monthTable = monthGenerator(months[monthId]);
   const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+
+  const findHoliday = (day: number) =>
+    holidays.find((h) => h.monthIndex === monthId && h.day === day);
+
   return (
     <div>
-      <div className="w-[20rem] md:w-[42rem] m-auto flex justify-between">
+      <div className="w-72 md:w-[42rem] m-auto flex justify-between">
         <button
           onClick={() => (monthId > 0 ? setMonthId(monthId - 1) : "")}
           type="button"
@@ -93,13 +98,18 @@ export default function Month({ months }: Props) {
                       : "")
                   }
                 >
-                  <Day day={d} />
+                  <Day day={d} holiday={findHoliday(d)} />
                 </td>
               ))}
             </tr>
           ))}
         </tbody>
       </table>
+      <div className="w-72 text-[0.6rem] flex justify-between pt-2 m-auto">
+        <p>&#9733; Public Holidays</p>
+        <p>&#9768; Bank Holidays</p>
+        <p>&#x2756; Mercantile Holidays</p>
+      </div>
     </div>
   );
 }

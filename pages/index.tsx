@@ -16,15 +16,24 @@ import Spinner from "../components/Spinner";
 
 export default function Home() {
   const [months, setMonths] = useState([]);
+  const [holidays, setHolidays] = useState([]);
 
   useEffect(() => {
     const fetchMonths = async () => {
-      const res = await fetch(`/api/calendar2023`);
-      const data = await res.json();
+      const res = await fetch(`/api/months2023`);
+      const months = await res.json();
 
-      setMonths(data);
+      setMonths(months);
     };
+    const fetchHolidays = async () => {
+      const res = await fetch(`/api/holidays2023`);
+      const holidays = await res.json();
+
+      setHolidays(holidays);
+    };
+
     fetchMonths();
+    fetchHolidays();
   }, []);
 
   return (
@@ -39,7 +48,11 @@ export default function Home() {
         <h1 className="text-xl md:text-3xl lg:text-5xl xl:text-6xl font-bold text-center p-4">
           Sri Lankan Calendar - 2023
         </h1>
-        {months?.length > 0 ? <Month months={months} /> : <Spinner />}
+        {months?.length > 0 ? (
+          <Month months={months} holidays={holidays} />
+        ) : (
+          <Spinner />
+        )}
       </main>
     </>
   );

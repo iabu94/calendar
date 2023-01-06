@@ -5,8 +5,17 @@ type Month = {
   startIndex: number;
 };
 
-type Day = {
-  id: number;
-  holiday?: string;
-  dayIndex: number;
+type Holiday = {
+  monthIndex: number;
+  day: number;
+  description: string;
+  isMercantile: boolean;
+  isPublic: boolean;
+  isBank: boolean;
+};
+
+type Calendar = {
+  year: number;
+  months: Month[12];
+  holidays: Holiday[];
 };
