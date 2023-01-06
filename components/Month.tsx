@@ -13,7 +13,7 @@ export default function Month({ months }: Props) {
   const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
   return (
     <div>
-      <div className="w-[42rem] m-auto flex justify-between">
+      <div className="w-[20rem] md:w-[42rem] m-auto flex justify-between">
         <button
           onClick={() => (monthId > 0 ? setMonthId(monthId - 1) : "")}
           type="button"
@@ -34,7 +34,7 @@ export default function Month({ months }: Props) {
           </svg>
           <span className="sr-only">Icon description</span>
         </button>
-        <h2 className="text-4xl font-semibold text-red-600">
+        <h2 className="text-lg md:text-4xl font-semibold text-red-600">
           {months[monthId].name} - 2023
         </h2>
         <button
