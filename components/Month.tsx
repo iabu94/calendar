@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { monthGenerator } from "../../helpers/month-generator";
+import { useState } from "react";
+import { monthGenerator } from "../helpers/month-generator";
 import Day from "./Day";
 
 type Props = {
@@ -8,13 +8,8 @@ type Props = {
 
 export default function Month({ months }: Props) {
   const [monthId, setMonthId] = useState(new Date().getMonth());
-  const [month, setMonth] = useState(months[monthId]);
 
-  useEffect(() => {
-    setMonth(months[monthId]);
-  }, [monthId]);
-
-  const monthTable = monthGenerator(month);
+  const monthTable = monthGenerator(months[monthId]);
   const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
   return (
     <div>
@@ -40,7 +35,7 @@ export default function Month({ months }: Props) {
           <span className="sr-only">Icon description</span>
         </button>
         <h2 className="text-4xl font-semibold text-red-600">
-          {month.name} - 2023
+          {months[monthId].name} - 2023
         </h2>
         <button
           onClick={() => (monthId < 11 ? setMonthId(monthId + 1) : "")}

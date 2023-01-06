@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import Month from "./components/Month";
+import Month from "../components/Month";
 
 // export async function getServerSideProps() {
 //   const res = await fetch(`http://localhost:3000/api/calendar2023`);
