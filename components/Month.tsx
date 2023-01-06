@@ -17,7 +17,7 @@ export default function Month({ months }: Props) {
         <button
           onClick={() => (monthId > 0 ? setMonthId(monthId - 1) : "")}
           type="button"
-          className="text-white bg-red-600 hover:bg-red-700 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center rotate-180"
+          className="text-white w-8 h-8 bg-red-600 hover:bg-red-700 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center rotate-180"
         >
           <svg
             aria-hidden="true"
@@ -40,7 +40,7 @@ export default function Month({ months }: Props) {
         <button
           onClick={() => (monthId < 11 ? setMonthId(monthId + 1) : "")}
           type="button"
-          className="text-white bg-red-600 hover:bg-red-700 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center"
+          className="text-white w-8 h-8 bg-red-600 hover:bg-red-700 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center"
         >
           <svg
             aria-hidden="true"
@@ -65,7 +65,7 @@ export default function Month({ months }: Props) {
               <th
                 key={i}
                 className={
-                  "w-24 p-2 border border-black " +
+                  "w-10 md:w-24 p-1 md:p-2 border border-black " +
                   (i === 5
                     ? " bg-slate-500 border-slate-500"
                     : i === 6
@@ -73,7 +73,7 @@ export default function Month({ months }: Props) {
                     : "")
                 }
               >
-                {d}
+                <p className="text-[0.6rem]">{d}</p>
               </th>
             ))}
           </tr>
@@ -85,7 +85,7 @@ export default function Month({ months }: Props) {
                 <td
                   key={i}
                   className={
-                    "w-24 h-24 text-center border border-black " +
+                    "w-10 h-10 md:w-24 md:h-24 text-center border border-black " +
                     (i === 5
                       ? " text-slate-500"
                       : i === 6
