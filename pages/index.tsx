@@ -1,18 +1,31 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import Month from "./components/Month";
 
-export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:3000/api/calendar2023`);
-  const data = await res.json();
+// export async function getServerSideProps() {
+//   const res = await fetch(`http://localhost:3000/api/calendar2023`);
+//   const data = await res.json();
 
-  return { props: { months: data } };
-}
+//   return { props: { months: data } };
+// }
 
-type Props = {
-  months: Month[];
-};
+// type Props = {
+//   months: Month[];
+// };
 
-export default function Home({ months }: Props) {
+export default function Home() {
+  const [months, setMonths] = useState([]);
+
+  useEffect(() => {
+    const fetchMonths = async () => {
+      const res = await fetch(`/api/calendar2023`);
+      const data = await res.json();
+
+      setMonths(data);
+    };
+    fetchMonths();
+  }, []);
+
   return (
     <>
       <Head>
