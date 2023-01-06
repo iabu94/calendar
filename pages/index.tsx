@@ -1,12 +1,18 @@
-import { GetStaticProps } from "next";
 import Head from "next/head";
 import Month from "./components/Month";
 
+export async function getServerSideProps() {
+  const res = await fetch(`http://localhost:3000/api/calendar2023`);
+  const data = await res.json();
+
+  return { props: { months: data } };
+}
+
 type Props = {
-  data: Month[];
+  months: Month[];
 };
 
-function Home({ data }: Props) {
+export default function Home({ months }: Props) {
   return (
     <>
       <Head>
@@ -19,17 +25,8 @@ function Home({ data }: Props) {
         <h1 className="text-5xl font-bold text-center p-4">
           Sri Lankan Calendar - 2023
         </h1>
-        <Month months={data} />
+        {months?.length > 0 && <Month months={months} />}
       </main>
     </>
   );
 }
-
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const res = await fetch(`http://localhost:3000/api/calendar2023`);
-  const data = await res.json();
-
-  return { props: { data } };
-};
-
-export default Home;
