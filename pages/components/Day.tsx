@@ -5,7 +5,7 @@ type Props = {
 export default function Day({ day }: Props) {
   const isHoliday = false;
   return (
-    <div>
+    <div className="hover:cursor-pointer">
       <div className="w-24 h-24 flex items-center justify-center">
         <p
           className={"text-6xl font-semibold " + (isHoliday && "text-red-600")}

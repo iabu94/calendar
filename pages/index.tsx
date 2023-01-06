@@ -1,14 +1,12 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Month from "./components/Month";
 
-export default function Home() {
-  const month: Month = {
-    id: 1,
-    name: "January",
-    days: 31,
-    startIndex: 6,
-  };
+type Props = {
+  data: Month[];
+};
 
+function Home({ data }: Props) {
   return (
     <>
       <Head>
@@ -18,11 +16,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="">
-        {/* <h1 className="text-5xl font-bold text-center">
+        <h1 className="text-5xl font-bold text-center p-4">
           Sri Lankan Calendar - 2023
-        </h1> */}
-        <Month month={month} />
+        </h1>
+        <Month months={data} />
       </main>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const res = await fetch(`http://localhost:3000/api/calendar2023`);
+  const data = await res.json();
+
+  return { props: { data } };
+};
+
+export default Home;
