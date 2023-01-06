@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import Month from "../components/Month";
+import Spinner from "../components/Spinner";
 
 // export async function getServerSideProps() {
 //   const res = await fetch(`http://localhost:3000/api/calendar2023`);
@@ -38,7 +39,7 @@ export default function Home() {
         <h1 className="text-xl md:text-3xl lg:text-5xl xl:text-6xl font-bold text-center p-4">
           Sri Lankan Calendar - 2023
         </h1>
-        {months?.length > 0 && <Month months={months} />}
+        {months?.length > 0 ? <Month months={months} /> : <Spinner />}
       </main>
     </>
   );
