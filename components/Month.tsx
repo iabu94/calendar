@@ -18,7 +18,7 @@ export default function Month({ months, holidays }: Props) {
 
   return (
     <div>
-      <div className="w-72 md:w-[42rem] m-auto flex justify-between">
+      <div className="w-72 md:w-[28rem] m-auto flex justify-between">
         <button
           onClick={() => (monthId > 0 ? setMonthId(monthId - 1) : "")}
           type="button"
@@ -70,7 +70,7 @@ export default function Month({ months, holidays }: Props) {
               <th
                 key={i}
                 className={
-                  "w-10 md:w-24 p-1 md:p-2 border border-black " +
+                  "w-10 md:w-16 p-1 md:p-2 border border-black " +
                   (i === 5
                     ? " bg-slate-500 border-slate-500"
                     : i === 6
@@ -90,7 +90,7 @@ export default function Month({ months, holidays }: Props) {
                 <td
                   key={i}
                   className={
-                    "w-10 h-10 md:w-24 md:h-24 text-center border border-black " +
+                    "w-10 h-10 md:w-16 md:h-16 text-center border border-black " +
                     (i === 5
                       ? " text-slate-500"
                       : i === 6

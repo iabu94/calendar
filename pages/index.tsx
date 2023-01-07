@@ -45,7 +45,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="">
-        <h1 className="text-xl md:text-3xl lg:text-5xl xl:text-6xl font-bold text-center p-4">
+        <h1 className="text-xl md:text-3xl font-bold text-center p-4">
           Sri Lankan Calendar - 2023
         </h1>
         {months?.length > 0 ? (
