@@ -1,16 +1,15 @@
-import { useState } from "react";
-
 type Props = {
+  month: number;
   day: number | string;
   holiday: Holiday | undefined;
 };
 
-export default function Day({ day, holiday }: Props) {
+export default function Day({ day, holiday, month }: Props) {
   const isToday = new Date().getDate() === day;
-  const [showModal, setShowModal] = useState(false);
+  const isThisMonth = new Date().getMonth() === month;
   return (
     <>
-    <div className={"hover:cursor-pointer " + (isToday && " bg-blue-100")} onClick={() => setShowModal(true)}>
+    <div className={"hover:cursor-pointer " + (isToday && isThisMonth && " bg-blue-100")}>
       <div className="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center">
         <p
           className={

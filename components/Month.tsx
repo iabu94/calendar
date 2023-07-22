@@ -108,7 +108,7 @@ export default function Month({ months, holidays }: Props) {
                   }
                   onClick={() => handleDayClick(d)}
                 >
-                  <Day day={d} holiday={findHoliday(d)} />
+                  <Day day={d} month={monthId} holiday={findHoliday(d)} />
                 </td>
               ))}
             </tr>
