@@ -1,11 +1,16 @@
+import { useState } from "react";
+
 type Props = {
   day: number | string;
   holiday: Holiday | undefined;
 };
 
 export default function Day({ day, holiday }: Props) {
+  const isToday = new Date().getDate() === day;
+  const [showModal, setShowModal] = useState(false);
   return (
-    <div className="hover:cursor-pointer">
+    <>
+    <div className={"hover:cursor-pointer " + (isToday && " bg-blue-100")} onClick={() => setShowModal(true)}>
       <div className="w-10 h-10 md:w-16 md:h-16 flex items-center justify-center">
         <p
           className={
@@ -13,7 +18,7 @@ export default function Day({ day, holiday }: Props) {
           }
         >
           {day === "*" ? (
-            <p className="font-thin text-xl md:text-4xl">&#10033;</p>
+            <span className="font-thin text-xl md:text-4xl">&#10033;</span>
           ) : (
             day
           )}
@@ -27,5 +32,6 @@ export default function Day({ day, holiday }: Props) {
         )}
       </div>
     </div>
+    </>
   );
 }

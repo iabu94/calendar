@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { monthGenerator } from "../helpers/month-generator";
 import Day from "./Day";
+import Modal from "./Modal";
 
 type Props = {
   months: Month[];
@@ -9,6 +10,14 @@ type Props = {
 
 export default function Month({ months, holidays }: Props) {
   const [monthId, setMonthId] = useState(new Date().getMonth());
+  const [showModal, setShowModal] = useState(false);
+  const [holiday, setHoliday] = useState<Holiday | undefined>(undefined);
+
+  const handleDayClick = (day: number) => {
+    setHoliday(findHoliday(day));
+    setShowModal(true);
+  }
+  const handleOnClose = () => setShowModal(false);
 
   const monthTable = monthGenerator(months[monthId]);
   const weekDays = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
@@ -32,9 +41,9 @@ export default function Month({ months, holidays }: Props) {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
           <span className="sr-only">Icon description</span>
@@ -55,9 +64,9 @@ export default function Month({ months, holidays }: Props) {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
           <span className="sr-only">Icon description</span>
@@ -97,6 +106,7 @@ export default function Month({ months, holidays }: Props) {
                       ? "text-red-700"
                       : "")
                   }
+                  onClick={() => handleDayClick(d)}
                 >
                   <Day day={d} holiday={findHoliday(d)} />
                 </td>
@@ -110,6 +120,11 @@ export default function Month({ months, holidays }: Props) {
         <p>&#9768; Bank Holidays</p>
         <p>&#x2756; Mercantile Holidays</p>
       </div>
+      <div className="text-center text-[0.7rem] mt-2">
+        <p>Click on a day to see the details.</p>
+      </div>
+
+      <Modal onClose={handleOnClose} show={showModal} holiday={holiday} />
     </div>
   );
 }
