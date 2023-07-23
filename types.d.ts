@@ -8,6 +8,7 @@ type Month = {
 type Holiday = {
   monthIndex: number;
   day: number;
+  name: string;
   description: string;
   isMercantile: boolean;
   isPublic: boolean;

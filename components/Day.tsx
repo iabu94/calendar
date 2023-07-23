@@ -24,9 +24,12 @@ export default function Day({ day, holiday, month }: Props) {
         </p>
         {!!holiday && (
           <p className="w-10 md:w-16 absolute text-[0.5rem] leading-[0.6rem] md:text-xs font-semibold md:px-1 text-black">
-            {holiday.description} {holiday.isPublic && <>&#9733;</>}{" "}
-            {holiday.isBank && <>&#9768;</>}{" "}
-            {holiday.isMercantile && <>&#x2756;</>}
+            {holiday.name} <br />
+            <span>
+              {holiday.isPublic && <>&#9733;</>}{" "}
+              {holiday.isBank && <>&#9768;</>}{" "}
+              {holiday.isMercantile && <>&#x2756;</>}
+            </span>
           </p>
         )}
       </div>

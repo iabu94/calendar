@@ -14,6 +14,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 0,
       day: 6,
+      name: 'Duruthu - Poya Day',
       description: "Duruthu Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -22,6 +23,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 0,
       day: 15,
+      name: 'Tamil Thai Pongal Day',
       description: "Tamil Thai Pongal Day",
       isPublic: true,
       isBank: true,
@@ -30,6 +32,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 0,
       day: 16,
+      name: 'Special Bank Holiday',
       description: "Special Bank Holiday",
       isPublic: false,
       isBank: true,
@@ -38,6 +41,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 1,
       day: 4,
+      name: 'National Day',
       description: "National Day",
       isPublic: true,
       isBank: true,
@@ -46,6 +50,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 1,
       day: 5,
+      name: 'Navam - Poya Day',
       description: "Navam Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -54,6 +59,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 1,
       day: 18,
+      name: "Maha Sivarathri Day",
       description: "Maha Sivarathri Day",
       isPublic: true,
       isBank: true,
@@ -62,6 +68,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 2,
       day: 6,
+      name: "Madin - Poya Day",
       description: "Madin Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -70,6 +77,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 3,
       day: 5,
+      name: "Bak - Poya Day",
       description: "Bak Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -78,6 +86,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 3,
       day: 7,
+      name: "Good Friday",
       description: "Good Friday",
       isPublic: true,
       isBank: true,
@@ -86,7 +95,8 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 3,
       day: 13,
-      description: "Day Prior to Sinhala & Tamil New Year",
+      name: "DP - Sinhala & Tamil New Year",
+      description: "Day Prior to Sinhala and Tamil New Year",
       isPublic: true,
       isBank: true,
       isMercantile: true,
@@ -94,6 +104,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 3,
       day: 14,
+      name: "Sinhala & Tamil New Year",
       description: "Sinhala & Tamil New Year",
       isPublic: true,
       isBank: true,
@@ -102,6 +113,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 3,
       day: 22,
+      name: "Ramzan Festival Day",
       description: "Eid al-Fitr (Ramzan Festival)",
       isPublic: true,
       isBank: true,
@@ -110,6 +122,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 4,
       day: 1,
+      name: "May Day",
       description: "May Day",
       isPublic: true,
       isBank: true,
@@ -118,6 +131,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 4,
       day: 5,
+      name: "Vesak - Poya Day",
       description: "Vesak Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -126,6 +140,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 4,
       day: 6,
+      name: "DA - Vesak Poya Day",
       description: "Day after Vesak Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -134,6 +149,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 5,
       day: 3,
+      name: "Poson - Poya Day",
       description: "Poson Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -142,6 +158,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 5,
       day: 29,
+      name: "Hajj Festival Day",
       description: "Eid al-Adha (Hajj Festival Day)",
       isPublic: true,
       isBank: true,
@@ -150,6 +167,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 6,
       day: 3,
+      name: "Adhi Esala - Poya Day",
       description: "Adhi Esala Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -158,6 +176,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 7,
       day: 1,
+      name: "Esala - Poya Day",
       description: "Esala Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -166,6 +185,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 7,
       day: 30,
+      name: "Nikini - Poya Day",
       description: "Nikini Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -174,6 +194,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 8,
       day: 28,
+      name: "Holy Prophet's Birthday",
       description: "Milad-Un-Nabi (Holy Prophet's Birthday)",
       isPublic: true,
       isBank: true,
@@ -182,6 +203,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 8,
       day: 29,
+      name: "Binara - Poya Day",
       description: "Binara Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -190,6 +212,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 9,
       day: 28,
+      name: "Vap - Poya Day",
       description: "Vap Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -198,6 +221,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 10,
       day: 12,
+      name: "Deepavali Festival Day",
       description: "Deepavali Festival Day",
       isPublic: true,
       isBank: true,
@@ -206,6 +230,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 10,
       day: 26,
+      name: "Ill - Poya Day",
       description: "Ill Full Moon Poya Day",
       isPublic: true,
       isBank: true,
@@ -214,6 +239,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 11,
       day: 25,
+      name: "Christmas Day",
       description: "Christmas Day",
       isPublic: true,
       isBank: true,
@@ -222,6 +248,7 @@ function generateHolidays(): Holiday[] {
     {
       monthIndex: 11,
       day: 26,
+      name: "Unduvap - Poya Day",
       description: "Unduvap Full Moon Poya Day",
       isPublic: true,
       isBank: true,

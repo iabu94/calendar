@@ -17,16 +17,17 @@ import Spinner from "../components/Spinner";
 export default function Home() {
   const [months, setMonths] = useState([]);
   const [holidays, setHolidays] = useState([]);
+  const [year, setYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
     const fetchMonths = async () => {
-      const res = await fetch(`/api/months2023`);
+      const res = await fetch(`/api/months${year}`);
       const months = await res.json();
 
       setMonths(months);
     };
     const fetchHolidays = async () => {
-      const res = await fetch(`/api/holidays2023`);
+      const res = await fetch(`/api/holidays${year}`);
       const holidays = await res.json();
 
       setHolidays(holidays);
@@ -34,7 +35,7 @@ export default function Home() {
 
     fetchMonths();
     fetchHolidays();
-  }, []);
+  }, [year]);
 
   return (
     <>
